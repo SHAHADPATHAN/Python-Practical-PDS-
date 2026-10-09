@@ -1,0 +1,76 @@
+===========================================================================
+PRACTICAL 9 - CLASSIFIER REPORT
+===========================================================================
+
+DATASET
+---------------------------------------------------------------------------
+Input file: D:\PDS PRACTICAL\Data\processed\balanced_logs.csv
+Total records: 18,304
+Training records: 14,643
+Testing records: 3,661
+
+MODEL
+---------------------------------------------------------------------------
+Algorithm: Random Forest Classifier
+Number of trees: 200
+Maximum depth: 20
+Random state: 42
+
+FEATURES
+---------------------------------------------------------------------------
+Final feature count: 9450
+Direct label-derived features were excluded to reduce data leakage.
+
+PERFORMANCE
+---------------------------------------------------------------------------
+Accuracy: 0.9921 (99.21%)
+Weighted Precision: 0.9923
+Weighted Recall: 0.9921
+Weighted F1-score: 0.9921
+
+CLASSIFICATION REPORT
+---------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+      benign       0.97      1.00      0.99       915
+         bot       1.00      0.99      0.99       915
+     scanner       1.00      0.99      1.00       916
+  suspicious       1.00      0.98      0.99       915
+
+    accuracy                           0.99      3661
+   macro avg       0.99      0.99      0.99      3661
+weighted avg       0.99      0.99      0.99      3661
+
+
+CONFUSION MATRIX
+---------------------------------------------------------------------------
+            benign  bot  scanner  suspicious
+benign         915    0        0           0
+bot              7  908        0           0
+scanner          5    0      911           0
+suspicious      13    4        0         898
+
+TOP 15 FEATURES
+---------------------------------------------------------------------------
+                feature  importance
+     bot_indicator_none    0.067312
+ scanner_indicator_none    0.044988
+   requests_per_ip_hour    0.044685
+ requests_per_ip_minute    0.040784
+      user_agent_length    0.039513
+scanner_and_high_volume    0.037494
+             is_browser    0.037283
+          rapid_request    0.035969
+       rapid_request_5s    0.034356
+     user_agent_entropy    0.034030
+        requests_per_ip    0.032953
+      requests_in_chunk    0.032537
+       rapid_request_1s    0.026119
+  rapid_and_high_volume    0.025093
+    unique_ports_per_ip    0.024682
+
+OUTPUT FILES
+---------------------------------------------------------------------------
+Model: D:\PDS PRACTICAL\models\random_forest_classifier.joblib
+Confusion matrix: D:\PDS PRACTICAL\outputs\figures\09_confusion_matrix.png
+Feature importance: D:\PDS PRACTICAL\outputs\figures\10_feature_importance.png

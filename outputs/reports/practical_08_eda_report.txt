@@ -1,0 +1,125 @@
+===========================================================================
+PRACTICAL 8 - VISUALIZATION & EDA REPORT
+===========================================================================
+
+DATASET
+---------------------------------------------------------------------------
+Input file: D:\PDS PRACTICAL\Data\processed\balanced_logs.csv
+Rows analyzed: 18,304
+Columns analyzed: 53
+
+1. LABEL DISTRIBUTION
+---------------------------------------------------------------------------
+benign             4,576 (25.00%)
+suspicious         4,576 (25.00%)
+bot                4,576 (25.00%)
+scanner            4,576 (25.00%)
+
+2. REQUESTS OVER TIME
+---------------------------------------------------------------------------
+Daily time points: 408
+Peak date: 2024-01-18
+Peak daily requests: 2,733
+
+3. REQUESTS BY HOUR
+---------------------------------------------------------------------------
+00:00 - 468 requests
+01:00 - 482 requests
+02:00 - 514 requests
+03:00 - 430 requests
+04:00 - 488 requests
+05:00 - 1,204 requests
+06:00 - 1,157 requests
+07:00 - 1,115 requests
+08:00 - 2,099 requests
+09:00 - 897 requests
+10:00 - 567 requests
+11:00 - 503 requests
+12:00 - 506 requests
+13:00 - 497 requests
+14:00 - 1,228 requests
+15:00 - 1,228 requests
+16:00 - 1,091 requests
+17:00 - 997 requests
+18:00 - 604 requests
+19:00 - 508 requests
+20:00 - 389 requests
+21:00 - 436 requests
+22:00 - 440 requests
+23:00 - 456 requests
+
+4. TOP 10 IPs
+---------------------------------------------------------------------------
+212.60.12.161        1,491
+103.111.33.197       765
+127.0.0.1            757
+157.32.35.29         719
+14.139.122.76        693
+152.58.35.97         653
+139.162.253.24       512
+212.71.238.216       421
+199.188.238.77       312
+139.144.154.251      305
+
+5. LABEL ACTIVITY OVER TIME
+---------------------------------------------------------------------------
+Hourly time points: 4,956
+
+6. HOURLY LABEL HEATMAP
+---------------------------------------------------------------------------
+label  benign  bot  scanner  suspicious
+hour                                   
+0         169  246        0          53
+1         187  207        0          88
+2         191  143       86          94
+3         215  155        1          59
+4         208  192        1          87
+5         206  350      498         150
+6         190  148      741          78
+7         262  116      298         439
+8         189  164       35        1711
+9         184  219       26         468
+10        203  127        7         230
+11        190  195        1         117
+12        188  262       15          41
+13        195  173       84          45
+14        141  228      794          65
+15        195  113      840          80
+16        175  272      569          75
+17        181  185      386         245
+18        205  147      192          60
+19        176  256        1          75
+20        182  122        0          85
+21        182  196        0          58
+22        169  184        1          86
+23        193  176        0          87
+
+7. TOP SCANNER IPs
+---------------------------------------------------------------------------
+212.60.12.161        1,491
+103.111.33.197       765
+157.32.35.29         719
+152.58.35.97         653
+199.188.238.77       312
+49.36.67.24          151
+49.36.64.212         125
+143.244.44.163       59
+152.58.60.21         56
+106.205.210.163      53
+
+8. BOT / INTERNAL ACTIVITY
+---------------------------------------------------------------------------
+Bot records: 4,576
+Internal IP records: 757
+
+9. HTTP STATUS CODE DISTRIBUTION
+---------------------------------------------------------------------------
+Not available: cj.log does not contain an HTTP status-code field.
+
+GENERAL EDA OBSERVATIONS
+---------------------------------------------------------------------------
+1. The balanced dataset contains equal representation of scanner, suspicious, benign and bot labels.
+2. IP-level analysis identifies high-volume sources and their associated activity labels.
+3. Time-based analysis shows how request activity changes across dates and hours.
+4. The heatmap provides a compact view of activity by hour and label.
+5. HTTP status-code analysis cannot be performed because the source log does not contain a status field.

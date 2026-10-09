@@ -1,0 +1,28 @@
+PRACTICAL 3 - DATA CLEANING REPORT
+============================================================
+
+Input file: D:\PDS PRACTICAL\Data\processed\structured_logs.csv
+Output file: D:\PDS PRACTICAL\Data\processed\cleaned_logs.csv
+
+Rows processed: 2,060,520
+Invalid timestamps: 0
+Invalid IP addresses: 0
+Invalid ports: 0
+
+Missing values before cleaning:
+timestamp: 0
+ip: 0
+port: 0
+user_agent: 26,153
+language: 1,998,854
+metadata: 2,012,637
+
+Cleaning operations:
+- Timestamp converted to datetime
+- IP addresses validated
+- Port values converted to numeric
+- Text values stripped and lowercased
+- Missing text values replaced with 'unknown'
+- Missing-value indicator columns created
+
+URL/path normalization was not performed because no URL/request-path field exists in the source dataset.

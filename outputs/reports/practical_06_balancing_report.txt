@@ -1,0 +1,42 @@
+===========================================================================
+PRACTICAL 6 - DATASET BALANCING REPORT
+===========================================================================
+
+INPUT DATASET
+---------------------------------------------------------------------------
+Input file: D:\PDS PRACTICAL\Data\processed\features.csv
+Input rows: 2,060,520
+Input columns: 51
+
+ORIGINAL CLASS DISTRIBUTION
+---------------------------------------------------------------------------
+scanner            1,827,367 (88.68%)
+suspicious           167,486 (8.13%)
+benign                61,091 (2.96%)
+bot                    4,576 (0.22%)
+
+BALANCING METHOD
+---------------------------------------------------------------------------
+Controlled Random Undersampling
+Random state: 42
+Target samples per class: 4,576
+
+BALANCED CLASS DISTRIBUTION
+---------------------------------------------------------------------------
+scanner                4,576 (25.00%)
+benign                 4,576 (25.00%)
+suspicious             4,576 (25.00%)
+bot                    4,576 (25.00%)
+
+OUTPUT DATASET
+---------------------------------------------------------------------------
+Output file: D:\PDS PRACTICAL\Data\processed\balanced_logs.csv
+Output rows: 18,304
+Output columns: 51
+Output size: 6.97 MB
+
+OBSERVATION
+---------------------------------------------------------------------------
+The original dataset was highly imbalanced.
+Controlled random undersampling was used to give every class equal representation.
+The balanced dataset is intended for subsequent machine learning experiments.

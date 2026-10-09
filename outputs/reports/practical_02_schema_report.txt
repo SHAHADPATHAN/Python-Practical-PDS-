@@ -1,0 +1,29 @@
+PRACTICAL 2 - LOG STRUCTURING REPORT
+============================================================
+
+Input file: D:\PDS PRACTICAL\Data\raw\cj.log
+Total lines read: 2,062,365
+Valid structured rows: 2,060,520
+Invalid JSON records: 911
+Invalid structures: 0
+Wrong field count: 0
+Chunks created: 42
+
+Structured columns:
+- timestamp
+- ip
+- port
+- user_agent
+- language
+- metadata
+
+Raw field count distribution:
+8 fields: 2,060,520 records
+
+Missing values:
+timestamp: 0
+ip: 0
+port: 0
+user_agent: 26,153
+language: 1,998,854
+metadata: 2,012,637

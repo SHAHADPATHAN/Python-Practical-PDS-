@@ -1,0 +1,43 @@
+PRACTICAL 4 - LABELING REPORT
+============================================================
+
+Input file: D:\PDS PRACTICAL\Data\processed\cleaned_logs.csv
+Output file: D:\PDS PRACTICAL\Data\processed\labeled_logs.csv
+
+Rows processed: 2,060,520
+Chunks processed: 42
+
+LABEL DISTRIBUTION
+scanner: 1,827,367 (88.68%)
+suspicious: 167,486 (8.13%)
+benign: 61,091 (2.96%)
+bot: 4,576 (0.22%)
+
+SCANNER INDICATORS
+gobuster: 1,408,510
+dirbuster: 397,212
+nmap: 9,204
+nikto: 7,044
+zgrab: 4,219
+nessus: 718
+masscan: 437
+wpscan: 23
+
+BOT INDICATORS
+python-requests: 2,276
+go-http-client: 2,166
+bot: 106
+spider: 15
+curl/: 8
+crawler: 5
+
+RAPID REQUEST ANALYSIS
+Requests with <= 1 second gap: 1,991,414
+
+LABELING METHODOLOGY
+scanner = known security/scanning tool indicator in User-Agent
+bot = known automated client indicator in User-Agent
+suspicious = rapid repeated request with <= 1 second gap
+benign = no observable suspicious indicator detected
+
+Important limitation: the source dataset does not contain an explicit HTTP request path, method, or status code. Therefore, SQL injection and path traversal labels were not assigned without direct evidence.

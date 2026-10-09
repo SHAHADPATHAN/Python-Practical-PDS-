@@ -1,0 +1,48 @@
+PRACTICAL 5 - FEATURE ENGINEERING REPORT
+============================================================
+
+Input file: D:\PDS PRACTICAL\Data\processed\labeled_logs.csv
+Output file: D:\PDS PRACTICAL\Data\processed\features.csv
+
+Rows: 2,060,520
+Columns: 51
+
+ENGINEERED FEATURES
+- requests_per_ip
+- unique_ports_per_ip
+- ip_active_duration_seconds
+- time_between_requests
+- rapid_request_1s
+- rapid_request_5s
+- requests_per_ip_minute
+- requests_per_ip_hour
+- scanner_type
+- bot_type
+- is_scanner
+- is_bot
+- is_browser
+- user_agent_length
+- user_agent_entropy
+- metadata_present
+- metadata_length
+- metadata_entropy
+- language_present
+- language_length
+- year
+- month
+- day
+- hour
+- day_of_week
+- is_weekend
+- is_low_port
+- is_ephemeral_port
+- high_volume_ip
+- very_high_volume_ip
+- scanner_and_high_volume
+- rapid_and_high_volume
+- automated_activity
+
+SOURCE-DATA LIMITATIONS
+- HTTP status code is not present in the source dataset, so status-code frequency was not created.
+- HTTP request URL/path is not present in the source dataset, so URL entropy was not created from a request path.
+- User-Agent and metadata entropy were created as available string-entropy features.

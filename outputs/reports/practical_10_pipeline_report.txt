@@ -1,0 +1,39 @@
+===========================================================================
+PRACTICAL 10 - REUSABLE PIPELINE REPORT
+===========================================================================
+
+PIPELINE STAGES
+---------------------------------------------------------------------------
+1. Load raw cj.log
+2. Parse JSON records
+3. Clean and preprocess
+4. Label requests
+5. Engineer features
+6. Save final dataset
+
+INPUT
+---------------------------------------------------------------------------
+Input file: D:\PDS PRACTICAL\Data\raw\cj.log
+
+OUTPUT
+---------------------------------------------------------------------------
+Output file: D:\PDS PRACTICAL\Data\processed\pipeline_features.csv
+Rows: 2,060,520
+Columns: 42
+Size: 647.61 MB
+
+LABEL DISTRIBUTION
+---------------------------------------------------------------------------
+scanner          1,827,367 (88.68%)
+suspicious         167,483 (8.13%)
+benign              61,091 (2.96%)
+bot                  4,579 (0.22%)
+
+SOURCE DATA LIMITATION
+---------------------------------------------------------------------------
+The actual cj.log source does not contain HTTP method, URL/request path, HTTP status code, or response-byte fields.
+Therefore these unavailable fields are not fabricated by the pipeline.
+
+REUSABILITY
+---------------------------------------------------------------------------
+The pipeline can be rerun against the raw cj.log file to reproduce parsing, preprocessing, labeling, feature engineering, and final dataset generation.

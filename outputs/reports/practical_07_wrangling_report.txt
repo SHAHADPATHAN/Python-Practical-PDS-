@@ -1,0 +1,35 @@
+===========================================================================
+PRACTICAL 7 - DATA WRANGLING REPORT
+===========================================================================
+
+INPUT DATASET
+---------------------------------------------------------------------------
+Input file: D:\PDS PRACTICAL\Data\processed\balanced_logs.csv
+Rows processed: 18,304
+Columns processed: 52
+
+1. IP-LEVEL GROUPING
+---------------------------------------------------------------------------
+Unique IP addresses: 3,430
+IP summary output: D:\PDS PRACTICAL\Data\processed\ip_summary.csv
+
+2. TIME-SERIES RESAMPLING
+---------------------------------------------------------------------------
+Hourly records: 9,782
+Hourly output: D:\PDS PRACTICAL\Data\processed\hourly_activity.csv
+
+3. PIVOT TABLE
+---------------------------------------------------------------------------
+Pivot rows: 4,956
+Pivot output: D:\PDS PRACTICAL\Data\processed\label_hour_pivot.csv
+
+4. BOT / INTERNAL IP FILTERING
+---------------------------------------------------------------------------
+Bot records: 4,576
+Internal IP records: 757
+Combined filtered records: 5,333
+Filtered output: D:\PDS PRACTICAL\Data\processed\filtered_activity.csv
+
+OBSERVATION
+---------------------------------------------------------------------------
+The balanced log dataset was transformed into IP-level summaries, hourly time-series data, label-based pivot data, and filtered bot/internal IP activity.
