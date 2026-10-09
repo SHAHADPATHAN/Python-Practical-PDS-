@@ -66,5 +66,8 @@ if FRONTEND_DIST.exists():
 
     @app.get("/{full_path:path}")
     def serve_spa(full_path: str):
-        """Serve React SPA for all non-API routes."""
+        """Serve React SPA or root static file for all non-API routes."""
+        file_path = FRONTEND_DIST / full_path
+        if full_path and file_path.is_file():
+            return FileResponse(str(file_path))
         return FileResponse(str(FRONTEND_DIST / "index.html"))
