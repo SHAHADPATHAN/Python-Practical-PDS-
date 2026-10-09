@@ -93,9 +93,9 @@ export default function FeaturesPage() {
 
       {/* Metrics */}
       <div className="metric-grid">
-        <MetricCard label="Engineered Features" value={33} sub="Extracted from raw logs" accent="orange" />
-        <MetricCard label="Feature Matrix File" value="features.csv" sub="746 MB generated artifact" accent="purple" />
-        <MetricCard label="Top Predictive Signal" value="bot_indicator_none" sub="6.73% RF importance" accent="green" />
+        <MetricCard label="Engineered Features" value="33 Signals" sub="Extracted from raw logs" accent="orange" />
+        <MetricCard label="Feature Matrix File" value="746 MB" sub="features.csv (51 columns)" accent="purple" />
+        <MetricCard label="Top Signal (RF)" value="6.73%" sub="bot_indicator_none" accent="green" />
         <MetricCard label="Leakage Advisory" value="Flagged" sub="Practical 09 leakage analysis" accent="yellow" />
       </div>
 

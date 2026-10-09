@@ -25,9 +25,9 @@ export default function ArchitecturePage() {
       {/* Metrics */}
       <div className="metric-grid">
         <MetricCard label="Pipeline Practicals" value="10 / 10" sub="All practicals connected" accent="green" />
-        <MetricCard label="Backend Engine" value="FastAPI + Python" sub="Asynchronous REST API" accent="orange" />
-        <MetricCard label="Frontend Framework" value="React + TypeScript" sub="Vite + Recharts UI" accent="purple" />
-        <MetricCard label="Classifiers Loaded" value="Random Forest" sub="200 estimators" accent="yellow" />
+        <MetricCard label="Backend Engine" value="FastAPI" sub="Python Asynchronous REST" accent="orange" />
+        <MetricCard label="Frontend Framework" value="React 19" sub="TypeScript + Vite SPA" accent="purple" />
+        <MetricCard label="Classifiers Loaded" value="Random Forest" sub="200 estimators (99.21% F1)" accent="yellow" />
       </div>
 
       {/* Pipeline Stages Flow */}

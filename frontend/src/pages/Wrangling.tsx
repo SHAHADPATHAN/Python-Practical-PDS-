@@ -38,10 +38,10 @@ export default function WranglingPage() {
 
       {/* Metrics */}
       <div className="metric-grid">
-        <MetricCard label="IP Profiles Created" value="ip_summary.csv" sub="243 KB aggregated matrix" accent="orange" />
-        <MetricCard label="Hourly Time-Series" value="hourly_activity.csv" sub="220 KB temporal resampling" accent="purple" />
-        <MetricCard label="Multidimensional Pivot" value="label_hour_pivot.csv" sub="140 KB 24-hr label cross-tab" accent="green" />
-        <MetricCard label="Filtered High-Risk" value="filtered_activity.csv" sub="1.9 MB targeted slice" accent="red" />
+        <MetricCard label="IP Profiles Created" value="3,430 IPs" sub="ip_summary.csv (243 KB)" accent="orange" />
+        <MetricCard label="Hourly Time-Series" value="9,782 Hours" sub="hourly_activity.csv (220 KB)" accent="purple" />
+        <MetricCard label="Multidimensional Pivot" value="4,956 Cells" sub="label_hour_pivot.csv (140 KB)" accent="green" />
+        <MetricCard label="Filtered High-Risk" value="5,333 Events" sub="filtered_activity.csv (1.9 MB)" accent="red" />
       </div>
 
       {/* Tab Selectors */}
