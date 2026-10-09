@@ -44,6 +44,8 @@ app.include_router(upload.router)
 
 # ─── Health ───────────────────────────────────────────────────────────────────
 
+from fastapi import Request
+
 @app.get("/api/health")
 def health():
     return {
@@ -51,6 +53,15 @@ def health():
         "service": "PDS Log Intelligence API",
         "version": "1.0.0",
     }
+
+@app.post("/api/client-error")
+async def client_error(req: Request):
+    try:
+        body = await req.json()
+        print(">>> CLIENT ERROR DETECTED:", body, flush=True)
+    except Exception as e:
+        print(">>> CLIENT ERROR READ FAILED:", e, flush=True)
+    return {"status": "logged"}
 
 
 # ─── Serve React frontend (built static files) ────────────────────────────────

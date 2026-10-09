@@ -103,6 +103,7 @@ export default function DashboardPage() {
   const [hourly, setHourly]     = useState<any[]>([])
   const [scanners, setScanners] = useState<any>(null)
   const [loading, setLoading]   = useState(true)
+  const [activeDonutIndex, setActiveDonutIndex] = useState<number | null>(null)
 
   useEffect(() => {
     Promise.all([
@@ -121,8 +122,6 @@ export default function DashboardPage() {
 
   const labelData  = labels?.labels || []
   const scannerTools = scanners?.tools?.slice(0, 6) || []
-
-  const [activeDonutIndex, setActiveDonutIndex] = useState<number | null>(null)
 
   const activeItem = activeDonutIndex !== null ? labelData[activeDonutIndex] : null
   const activeMeta = activeItem ? (THREAT_META[activeItem.label?.toLowerCase()] || {
@@ -250,26 +249,30 @@ export default function DashboardPage() {
                 pointerEvents: 'none',
               }} />
 
+              {/* Dedicated SVG defs for linear gradients */}
+              <svg width="0" height="0" style={{ position: 'absolute', pointerEvents: 'none' }}>
+                <defs>
+                  <linearGradient id="donutGrad-scanner" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#FF3838" />
+                    <stop offset="100%" stopColor="#FF7A00" />
+                  </linearGradient>
+                  <linearGradient id="donutGrad-suspicious" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#F59E0B" />
+                    <stop offset="100%" stopColor="#FCD34D" />
+                  </linearGradient>
+                  <linearGradient id="donutGrad-benign" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#059669" />
+                    <stop offset="100%" stopColor="#10B981" />
+                  </linearGradient>
+                  <linearGradient id="donutGrad-bot" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#7C3AED" />
+                    <stop offset="100%" stopColor="#C084FC" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
               <ResponsiveContainer width="100%" height={260}>
                 <PieChart>
-                  <defs>
-                    <linearGradient id="donutGrad-scanner" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#FF3838" />
-                      <stop offset="100%" stopColor="#FF7A00" />
-                    </linearGradient>
-                    <linearGradient id="donutGrad-suspicious" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#F59E0B" />
-                      <stop offset="100%" stopColor="#FCD34D" />
-                    </linearGradient>
-                    <linearGradient id="donutGrad-benign" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#059669" />
-                      <stop offset="100%" stopColor="#10B981" />
-                    </linearGradient>
-                    <linearGradient id="donutGrad-bot" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#7C3AED" />
-                      <stop offset="100%" stopColor="#C084FC" />
-                    </linearGradient>
-                  </defs>
                   <Pie
                     data={labelData}
                     cx="50%" cy="50%"
@@ -280,6 +283,8 @@ export default function DashboardPage() {
                     nameKey="label"
                     stroke="#080C14"
                     strokeWidth={2}
+                    onMouseEnter={(_: any, index: number) => setActiveDonutIndex(index)}
+                    onMouseLeave={() => setActiveDonutIndex(null)}
                   >
                     {labelData.map((entry: any, index: number) => {
                       const isSelected = activeDonutIndex === index
@@ -289,13 +294,6 @@ export default function DashboardPage() {
                           fill={`url(#donutGrad-${entry.label?.toLowerCase()})`}
                           stroke={isSelected ? '#FFFFFF' : '#080C14'}
                           strokeWidth={isSelected ? 3 : 2}
-                          style={{
-                            filter: isSelected ? 'drop-shadow(0 0 12px rgba(255, 107, 0, 0.75))' : 'none',
-                            cursor: 'pointer',
-                            transition: 'all 0.25s ease',
-                          }}
-                          onMouseEnter={() => setActiveDonutIndex(index)}
-                          onMouseLeave={() => setActiveDonutIndex(null)}
                         />
                       )
                     })}
