@@ -19,11 +19,20 @@ const accentClass: Record<string, string> = {
 
 export function MetricCard({ label, value, sub, accent = 'default', icon }: MetricCardProps) {
   const cls = accentClass[accent] || ''
+  const strVal = typeof value === 'number' ? value.toLocaleString() : String(value ?? '')
+
+  let sizeClass = ''
+  if (strVal.length > 15) {
+    sizeClass = 'metric-value-xs'
+  } else if (strVal.length > 10) {
+    sizeClass = 'metric-value-sm'
+  }
+
   return (
     <div className="metric-card">
       <div className="metric-label">{label}</div>
-      <div className={`metric-value ${cls}`}>
-        {typeof value === 'number' ? value.toLocaleString() : value}
+      <div className={`metric-value ${cls} ${sizeClass}`} title={strVal}>
+        {strVal}
       </div>
       {sub && <div className="metric-sub">{sub}</div>}
     </div>
