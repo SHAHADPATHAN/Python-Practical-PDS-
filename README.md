@@ -16,15 +16,23 @@
   <strong>A full-stack, publication-grade cybersecurity data science platform and interactive SOC Dashboard processing 2,060,520 real-world web server access events through a 10-stage autonomous analytics pipeline.</strong>
 </p>
 
-```
-  ┌─────────────────────────────────────────────────────────────────────────────────┐
-  │  ⚡ ONE-COMMAND INSTANT LAUNCH:                                                  │
-  │  python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000                │
-  │  👉 Open Web Console: http://localhost:8000   │   API Docs: http://localhost:8000/docs │
-  └─────────────────────────────────────────────────────────────────────────────────┘
-```
-
 </div>
+
+> [!TIP]
+> ### ⚡ Instant Unified Platform Launch
+> Run a single command from the project root to spin up both the **FastAPI Asynchronous Engine** and the **React 19 SOC Operations Console** concurrently on port `8000`:
+>
+> ```bash
+> python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+> ```
+>
+> | Platform Service | URL | Direct Access |
+> | :--- | :--- | :--- |
+> | 🌐 **Interactive SOC Command Console** | `http://localhost:8000` | [Open Console →](http://localhost:8000) |
+> | 📑 **Interactive OpenAPI Swagger Docs** | `http://localhost:8000/docs` | [Explore Endpoints →](http://localhost:8000/docs) |
+> | 📖 **Technical Redoc Schema Specs** | `http://localhost:8000/redoc` | [View Schema →](http://localhost:8000/redoc) |
+>
+> 🪟 *Windows Shortcut: You can also double-click [`run.bat`](run.bat) from the project root for automated 1-click startup.*
 
 ---
 
@@ -139,7 +147,7 @@ flowchart TD
 ## 🔬 The 10 Data Science Practicals (Deep Technical Guide)
 
 ### Practical 1: Large-Scale Streaming Log Exploration
-- **File**: [`practicals/practical_01_load_explore.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_01_load_explore.py)
+- **File**: [`practicals/practical_01_load_explore.py`](practicals/practical_01_load_explore.py)
 - **Input Artifact**: `Data/raw/cj.log` (215.4 MB)
 - **Objective**: Ingest and audit semi-structured server logs line-by-line without memory exhaustion ($O(1)$ memory complexity).
 - **Core Methodology**: Implemented a streaming buffered generator inspecting file byte size via `pathlib.Path.stat()`, checking file existence, and sampling heterogeneous JSON array tokens across the head, body, and tail of the file.
@@ -148,7 +156,7 @@ flowchart TD
 ---
 
 ### Practical 2: Semi-Structured JSON Parsing & Anomaly Isolation
-- **File**: [`practicals/practical_02_parse_structure.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_02_parse_structure.py)
+- **File**: [`practicals/practical_02_parse_structure.py`](practicals/practical_02_parse_structure.py)
 - **Output Artifact**: `Data/processed/structured_logs.csv` (157 MB)
 - **Report**: `outputs/reports/practical_02_schema_report.txt`
 - **Objective**: Transform unstructured JSON arrays into a standardized, schema-validated tabular dataset.
@@ -158,7 +166,7 @@ flowchart TD
 ---
 
 ### Practical 3: Temporal & Network Endpoint Hygiene
-- **File**: [`practicals/practical_03_clean_preprocess.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_03_clean_preprocess.py)
+- **File**: [`practicals/practical_03_clean_preprocess.py`](practicals/practical_03_clean_preprocess.py)
 - **Output Artifact**: `Data/processed/cleaned_logs.csv` (235 MB)
 - **Report**: `outputs/reports/practical_03_cleaning_report.txt`
 - **Objective**: Ensure complete relational integrity across temporal, network, and textual attributes.
@@ -172,7 +180,7 @@ flowchart TD
 ---
 
 ### Practical 4: Domain-Driven Rule-Based Attack Labeling
-- **File**: [`practicals/practical_04_label_attacks.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_04_label_attacks.py)
+- **File**: [`practicals/practical_04_label_attacks.py`](practicals/practical_04_label_attacks.py)
 - **Output Artifact**: `Data/processed/labeled_logs.csv` (307 MB)
 - **Report**: `outputs/reports/practical_04_labeling_report.txt`
 - **Objective**: Establish ground-truth multi-class threat categories using cybersecurity domain heuristics.
@@ -186,7 +194,7 @@ flowchart TD
 ---
 
 ### Practical 5: High-Dimensional Feature Engineering (33 Signals)
-- **File**: [`practicals/practical_05_feature_engineering.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_05_feature_engineering.py)
+- **File**: [`practicals/practical_05_feature_engineering.py`](practicals/practical_05_feature_engineering.py)
 - **Output Artifact**: `Data/processed/features.csv` (746 MB)
 - **Report**: `outputs/reports/practical_05_feature_report.txt`
 - **Objective**: Transform raw string records into a high-dimensional mathematical feature matrix for machine learning.
@@ -204,7 +212,7 @@ flowchart TD
 ---
 
 ### Practical 6: Class Imbalance Mitigation (Controlled Stratified Undersampling)
-- **File**: [`practicals/practical_06_balancing.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_06_balancing.py)
+- **File**: [`practicals/practical_06_balancing.py`](practicals/practical_06_balancing.py)
 - **Output Artifact**: `Data/processed/balanced_logs.csv` (6.97 MB)
 - **Report**: `outputs/reports/practical_06_balancing_report.txt`
 - **Objective**: Neutralize severe 400:1 class skew to prevent majority-class prediction bias.
@@ -216,7 +224,7 @@ flowchart TD
 ---
 
 ### Practical 7: Multidimensional Wrangling, Pivots & Resampling
-- **File**: [`practicals/practical_07_data_wrangling.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_07_data_wrangling.py)
+- **File**: [`practicals/practical_07_data_wrangling.py`](practicals/practical_07_data_wrangling.py)
 - **Output Artifacts**:
   - `Data/processed/ip_summary.csv` (3,430 client host behavioral profiles)
   - `Data/processed/hourly_activity.csv` (9,782 hourly resampled buckets)
@@ -228,7 +236,7 @@ flowchart TD
 ---
 
 ### Practical 8: Publication-Grade Visual Exploratory Data Analysis (EDA)
-- **File**: [`practicals/practical_08_eda.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_08_eda.py)
+- **File**: [`practicals/practical_08_eda.py`](practicals/practical_08_eda.py)
 - **Output Figures**: `outputs/figures/` (10 publication-quality PNG charts)
 - **Report**: `outputs/reports/practical_08_eda_report.txt`
 - **Visualization Suite**:
@@ -246,7 +254,7 @@ flowchart TD
 ---
 
 ### Practical 9: Supervised Machine Learning & Data Leakage Reflection
-- **File**: [`practicals/practical_09_classifier.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_09_classifier.py)
+- **File**: [`practicals/practical_09_classifier.py`](practicals/practical_09_classifier.py)
 - **Model Output**: `models/random_forest_classifier.joblib` (3.55 MB)
 - **Report**: `outputs/reports/practical_09_classifier_report.txt`
 - **Model Configuration**:
@@ -265,7 +273,7 @@ flowchart TD
 ---
 
 ### Practical 10: Reusable End-to-End Object-Oriented Pipeline
-- **File**: [`practicals/practical_10_pipeline.py`](file:///d:/PDS%20PRACTICAL/practicals/practical_10_pipeline.py)
+- **File**: [`practicals/practical_10_pipeline.py`](practicals/practical_10_pipeline.py)
 - **Output Artifact**: `Data/processed/pipeline_features.csv` (647.6 MB)
 - **Report**: `outputs/reports/practical_10_pipeline_report.txt`
 - **Architecture**: Implemented `LogAnalyticsPipeline`, an object-oriented Python engine providing `.ingest()`, `.clean()`, `.label()`, `.engineer_features()`, and `.export()` methods.
@@ -332,11 +340,8 @@ flowchart TD
 
 The web dashboard is styled in an executive **Dark Cybersecurity SOC Theme** (`#080C14` obsidian base, `#FF6B00` electric orange, `#06B6D4` telemetry cyan, JetBrains Mono typography) with the **Apex Sentinel** brand mark.
 
-```
-       ┌─────────────────────────────────────────────────────────────┐
-       │   [🛡️ APEX SENTINEL]   SECURITY COMMAND CENTER   ● ONLINE  │
-       └─────────────────────────────────────────────────────────────┘
-```
+> [!NOTE]
+> **Design System**: Executive Dark Cyber Operations (`#080C14` obsidian base • `#FF6B00` electric security orange • `#06B6D4` telemetry cyan • JetBrains Mono) anchored by the sculpted **Apex Sentinel** brand emblem.
 
 | Route | View Name | Key Interactive Features & Telemetry |
 | :--- | :--- | :--- |
